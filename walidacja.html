@@ -107,6 +107,11 @@
                     },
                     password: {
                         required: true,
+                        minlength: 8
+                    },
+                    ConfirmPassword: {
+                        required: true,
+                        equalTo: '#password'
                     },
                     checkbox: {
                         required: true
@@ -131,6 +136,12 @@
                     },
                     password: {
                         required: "Proszę podać hasło",
+                        minlength: 'Hasło musi mieć minimum 8 znaków',
+                    },
+                    confirmpassword: {
+                        required: "Proszę podać hasło",
+                        minlength: 'Hasło musi mieć minimum 8 znaków',
+                        equalTo: 'Hasła nie są takie same'
                     },
                     checkbox: {
                         required: "Musisz zaakceptować politykę"
@@ -155,7 +166,7 @@
             </p>
             <p>
                 <label for="lastname">Nazwisko:</label>
-                <input id="lastname" name="lastname" type="text" required>
+                <input id="lastname" name="lastname" minlength="2" type="text" required>
             </p>
             <p>
                 <label for="cemail">Adres e-mail:</label>
@@ -166,16 +177,22 @@
                 <input id="cUrl" name="URL" type="url" required>
             </p>
             <p>
-                <label for="cpassword">Hasło:</label>
-                <input id="cpassword" name="password" type="password" required>
+                <label for="password">Hasło:</label>
+                <input id="password" name="password" minlength="8" type="password" required>
             </p>
+            <p>
+              <label for="Rpassword">Powtórz hasło</label>
+              <input name="ConfirmPassword" id="Rpassword" minlength="8" type="password" required>
+          </p>
             <p>
                 <label for="agree">Akceptuję politykę(wymagane):</label>
                 <input id="agree" name="checkbox" type="checkbox" required>
             </p>
+
             <p>
-                <input type="submit" class="submit" value="Zarejestruj się">
+                <input type="submit" class="submit" value="Zarezerwuj">
             </p>
+            
         </fieldset>
     </form>
 </body>
